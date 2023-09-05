@@ -13,12 +13,28 @@ document.addEventListener("DOMContentLoaded", () => {
                     const listItem = document.createElement("li");
 
                     // Access contact properties such as name, email, phone, etc.
-                    const name = contact.name || "N/A";
-                    const email = contact.email || "N/A";
-                    const phone = contact.phone || "N/A";
+                    const firstName = contact.first_name || "N/A";
+                    const lastName = contact.last_name || "N/A";
+                    const email = contact.primary_email || "N/A";
+                    const phone = contact.phone.value || "N/A";
+                    const companyID = contact.company_id || "N/A"
+                    const company = contact.org_id.name || "N/A"
+                    const address = contact.org_id.address || "N/A"
+                    const followers_count = contact.followers_count || "N/A"
+
+                    console.log(data)
 
                     // Populate the list item with contact information
-                    listItem.textContent = `Name: ${name}, Email: ${email}, Phone: ${phone}`;
+                    listItem.textContent = 
+                    `Name: ${firstName}, 
+                    Surname: ${lastName}, 
+                    Email: ${email}, 
+                    Phone: ${phone},
+                    companyID: ${companyID},
+                    Company: ${company}, 
+                    Address: ${address}
+                    followers_count: ${followers_count}`
+;
 
                     // Append the list item to the contact list
                     contactList.appendChild(listItem);
