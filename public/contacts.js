@@ -20,20 +20,29 @@ document.addEventListener("DOMContentLoaded", () => {
                     const companyID = contact.company_id || "N/A"
                     const company = contact.org_id.name || "N/A"
                     const address = contact.org_id.address || "N/A"
-                    const followers_count = contact.followers_count || "N/A"
+                    const followers = contact.followers_count || "N/A"
+                    const deals = contact.closed_deals_count || "N/A"
+                    const joined = contact.add_time || "N/A"
+
+
 
                     console.log(data)
 
                     // Populate the list item with contact information
                     listItem.textContent = 
-                    `Name: ${firstName}, 
-                    Surname: ${lastName}, 
-                    Email: ${email}, 
-                    Phone: ${phone},
-                    companyID: ${companyID},
-                    Company: ${company}, 
-                    Address: ${address}
-                    followers_count: ${followers_count}`
+                    `
+                     Name: ${firstName}, 
+                     Surname: ${lastName}, 
+                     Email: ${email}, 
+                     Phone: ${phone},
+                     companyID: ${companyID},
+                     Company: ${company}, 
+                     Address: ${address},
+                     Followers: ${followers},
+                     Closed Deals: ${deals}
+                     Joined: ${joined}
+                     `;
+
 ;
 
                     // Append the list item to the contact list
