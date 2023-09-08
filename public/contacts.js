@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     const deals = contact.closed_deals_count || "N/A";
                     const joined = contact.add_time || "N/A";
 
+
                     // Populate the table row with contact information
                     row.innerHTML = `
                         <td>${firstName}</td>
